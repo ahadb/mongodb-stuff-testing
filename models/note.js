@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const note = new mongoose.Schema({
-  noteName: {
+  name: {
     type: String,
     required: true,
     unique: true
@@ -14,7 +14,7 @@ const note = new mongoose.Schema({
     type: String,
     required: true
   },
-  noteAuthor: {
+  author: {
     type: String,
     required: true
   },

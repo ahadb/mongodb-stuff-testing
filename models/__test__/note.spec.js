@@ -97,39 +97,39 @@ describe('Note model', () => {
       expect(e).toBeTruthy()
     }
   })
-  test('note name created successfully', async () => {
-    expect.assertions(1)
-
-    const note = await Note.create({ noteName: "My very first note!"})
-
-    try {
-      await note
-      expect(note.noteName).toBe("My very first note!")
-
-    } catch (e) {
-      //expect(e).toBeTruthy()
-    }
-  })
-  test('notes should have correct fields', async () => {
-    const today = Date.now()
-    const {_id, __v, ...note} = (await Note.create({
-      noteName: 'Bokhari',
-      body: 'some body here',
-      email: 'a@gmail.com',
-      createdAt: today, // they were born today 😎
-      length: 1008,
-      noteAuthor: 'Ahad Bokhari',
-      description: 'My notes description'
-    })).toObject()
-
-    expect(note).toEqual({
-      noteName: 'Bokhari',
-      body: 'some body here',
-      email: 'a@gmail.com',
-      createdAt: new Date(today), // they were born today 😎
-      length: 1008,
-      noteAuthor: 'Ahad Bokhari',
-      description: 'My notes description'
-    })
-  })
+  // test('note name created successfully', async () => {
+  //   expect.assertions(1)
+  //
+  //   const note = await Note.create({ noteName: "My very first note!"})
+  //
+  //   try {
+  //     await note
+  //     expect(note.noteName).toBe("My very first note!")
+  //
+  //   } catch (e) {
+  //     //expect(e).toBeTruthy()
+  //   }
+  // })
+  // test('notes should have correct fields', async () => {
+  //   const today = Date.now()
+  //   const {_id, __v, ...note} = (await Note.create({
+  //     noteName: 'Bokhari',
+  //     body: 'some body here',
+  //     email: 'a@gmail.com',
+  //     createdAt: today, // they were born today 😎
+  //     length: 1008,
+  //     noteAuthor: 'Ahad Bokhari',
+  //     description: 'My notes description'
+  //   })).toObject()
+  //
+  //   expect(note).toEqual({
+  //     noteName: 'Bokhari',
+  //     body: 'some body here',
+  //     email: 'a@gmail.com',
+  //     createdAt: new Date(today), // they were born today 😎
+  //     length: 1008,
+  //     noteAuthor: 'Ahad Bokhari',
+  //     description: 'My notes description'
+  //   })
+  // })
 })

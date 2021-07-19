@@ -1,4 +1,4 @@
-const Post = require('./post')
+const Post = require('../post')
 
 const postByTitle = (title) => {
   return Post.findOne({title}).exec()
